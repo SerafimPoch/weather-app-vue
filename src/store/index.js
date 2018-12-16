@@ -9,16 +9,13 @@ export const store = new Vuex.Store({
     data: []
   },
   getters: {
-    testData: state => {
-      setTimeout(() => {
-        return state.data[0].city.name;
-      });
+    darkTest: state => {
+      return state.data[0].city.name;
     }
   },
   mutations: {
-    getDataApi: async state => {
-      const dataApi = await weatherApi();
-      return state.data.push(dataApi);
+    getDataApi: state => {
+      return weatherApi().then(wethApi => state.data.push(wethApi));
     }
   },
   actions: {

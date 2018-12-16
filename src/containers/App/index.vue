@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div class="container">
   <p>{{this.$store.state.data[0].city.name}}</p>
+  <p>{{this.$store.state.data[0].city.population}}</p>
 
   </div>
 </template>
@@ -16,17 +17,15 @@ export default {
  created(){
     this.$store.dispatch('getDataByCity')
  
- },
-
- computed: {
-   ...mapGetters(['testData'])
- }
-
-  
+ },  
 }
 </script>
 
-<style>
+<style scoped>
 
-
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
 </style>
