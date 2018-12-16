@@ -2,18 +2,19 @@
   <div class="container">
   <p>{{this.$store.state.data[0].city.name}}</p>
   <p>{{this.$store.state.data[0].city.population}}</p>
-
+  <search/>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
-import { mapGetters } from "vuex";
-import {weatherApi} from '../../api/'
+
+import search from './Search.vue';
 
 export default {
+ components: {
+   search
+ },
   name: 'App',
-
  created(){
     this.$store.dispatch('getDataByCity')
  
