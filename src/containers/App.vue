@@ -1,14 +1,13 @@
 <template>
   <div class="container">
-  <p>{{this.$store.state.data[0].city.name}}</p>
-  <p>{{this.$store.state.data[0].city.population}}</p>
-  <search/>
+      <search/>
   </div>
 </template>
 
 <script>
 
 import search from './Search.vue';
+import forecast from './Forecast.vue';
 
 export default {
  components: {
@@ -17,7 +16,6 @@ export default {
   name: 'App',
  created(){
     this.$store.dispatch('getDataByCity')
- 
  },  
 }
 </script>
