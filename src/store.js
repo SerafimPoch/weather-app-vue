@@ -1,6 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
-import { weatherApi } from "../api";
+import { weatherApi } from "./api";
 
 Vue.use(Vuex);
 
