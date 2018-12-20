@@ -1,6 +1,7 @@
 <template>
   <div class="container">
-      <search/>
+    <search/>
+    <forecast/>
   </div>
 </template>
 
@@ -11,7 +12,8 @@ import forecast from './Forecast.vue';
 
 export default {
  components: {
-   search
+   search,
+   forecast
  },
   name: 'App',
  created(){
