@@ -9,8 +9,11 @@ export const store = new Vuex.Store({
     data: []
   },
   getters: {
-    darkTest: state => {
+    city: state => {
       return state.data[0].city.name;
+    },
+    tempCelc: state => {
+      return state.data[0].list[0].main.temp;
     }
   },
   mutations: {
