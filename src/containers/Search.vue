@@ -1,7 +1,7 @@
 <template>
 <div class='containerSearch'>
   <div>
-    <input class='search' type='text' v-model='dark'/>
+    <input class='search' type='text' v-model='city'/>
     <button @click='submit'>Submit</button>
     </div>
   </div>
@@ -11,12 +11,12 @@
   export default {
     data(){
       return {
-        dark: ''
+        city: ''
         }
     },
     methods: {
       submit(){
-        console.log(this.dark)
+        this.$store.dispatch('getDataByCity',this.city)
       }
     }
   }
