@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class='container'>
     <search/>
     <forecast/>
   </div>
@@ -7,16 +7,16 @@
 
 <script>
 
-import search from './Search.vue';
-import forecast from './Forecast.vue';
+import search from './Search.vue'
+import forecast from './Forecast.vue'
 
 export default {
- components: {
-   search,
-   forecast
- },
+  components: {
+    search,
+    forecast
+  },
   name: 'App',
- created(){
+  created() {
     this.$store.dispatch('getDataByCity')
  },  
 }
