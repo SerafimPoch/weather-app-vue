@@ -1,7 +1,8 @@
 <template>
     <div class='containerForecast'>
         <p>{{city}}</p>
-        <!-- <p>{{temp}} Celcium</p> -->
+        <p>{{temp}} Celcium</p>
+        <p>{{descrip}}</p>
     </div>
 </template>
 
@@ -12,10 +13,13 @@ export default {
 city(){
     return this.$store.getters.city
 },
-// temp(){
-//     return Math.round(this.$store.getters.tempCelc -273.15)
-// }
-    }
+temp(){
+    return this.$store.getters.temp
+},
+descrip(){
+    return this.$store.getters.descrip
+}
+}
     }
    
 </script>

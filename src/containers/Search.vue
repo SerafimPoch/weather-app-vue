@@ -23,12 +23,11 @@
   </script>
 
 <style>
-.containerSearch {
-  width: 20%;
-  display: flex;
-  margin-top: 30px;
-  align-items: center;
-  justify-content: space-between;
+  .containerSearch {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .search {
