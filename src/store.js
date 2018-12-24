@@ -6,21 +6,30 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    data: { city: "" }
+    city: "",
+    temp: "",
+    description: ""
   },
   getters: {
     city: state => {
-      return state.data.city;
+      return state.city;
+    },
+    temp: state => {
+      return state.temp;
+    },
+    descrip: state => {
+      return state.description;
     }
-    // tempCelc: state => {
-    //   return state.data[0].list[0].main.temp;
-    // }
   },
   mutations: {
-    getDataApi: (state, city) => {
-      return weatherApi(city).then(
-        weathApi => (state.data.city = weathApi.city.name)
-      );
+    getDataApi: async (state, city) => {
+      const resp = await weatherApi(city);
+      const obj = {
+        city: resp.city.name,
+        temp: Math.round(resp.list[0].main.temp - 273.15),
+        description: resp.list[0].weather[0].description
+      };
+      return Object.assign(state, obj);
     }
   },
   actions: {
