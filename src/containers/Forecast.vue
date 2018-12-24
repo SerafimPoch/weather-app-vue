@@ -1,7 +1,7 @@
 <template>
     <div class='containerForecast'>
         <p>{{city}}</p>
-        <p>{{temp}} Celcium</p>
+        <!-- <p>{{temp}} Celcium</p> -->
     </div>
 </template>
 
@@ -12,9 +12,9 @@ export default {
 city(){
     return this.$store.getters.city
 },
-temp(){
-    return Math.round(this.$store.getters.tempCelc -273.15)
-}
+// temp(){
+//     return Math.round(this.$store.getters.tempCelc -273.15)
+// }
     }
     }
    

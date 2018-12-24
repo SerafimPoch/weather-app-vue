@@ -6,24 +6,26 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    data: []
+    data: { city: "" }
   },
   getters: {
     city: state => {
-      return state.data[0].city.name;
-    },
-    tempCelc: state => {
-      return state.data[0].list[0].main.temp;
+      return state.data.city;
     }
+    // tempCelc: state => {
+    //   return state.data[0].list[0].main.temp;
+    // }
   },
   mutations: {
-    getDataApi: state => {
-      return weatherApi().then(wethApi => state.data.push(wethApi));
+    getDataApi: (state, city) => {
+      return weatherApi(city).then(
+        weathApi => (state.data.city = weathApi.city.name)
+      );
     }
   },
   actions: {
-    getDataByCity: context => {
-      context.commit("getDataApi");
+    getDataByCity: (context, city) => {
+      context.commit("getDataApi", city);
     }
   }
 });
