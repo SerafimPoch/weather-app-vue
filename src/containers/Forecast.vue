@@ -8,9 +8,8 @@
 
 <script>
 export default {
-   
- computed: {
-city(){
+  computed: {
+    city(){
     return this.$store.getters.city
 },
 temp(){

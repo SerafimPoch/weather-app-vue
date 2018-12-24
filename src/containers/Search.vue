@@ -8,8 +8,8 @@
 </template>;
 
 <script>
-  export default {
-    data(){
+export default {
+  data(){
       return {
         city: ''
         }
@@ -29,11 +29,9 @@
     align-items: center;
     justify-content: space-between;
 }
-
 .search {
   width: 65%;
   height: 15px;
-
 }
 </style>
 

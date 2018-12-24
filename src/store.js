@@ -1,14 +1,14 @@
-import Vue from "vue";
-import Vuex from "vuex";
-import { weatherApi } from "./api";
+import Vue from 'vue';
+import Vuex from 'vuex';
+import { weatherApi } from './api';
 
 Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
-    city: "",
-    temp: "",
-    description: ""
+    city: '',
+    temp: '',
+    description: ''
   },
   getters: {
     city: state => {
@@ -34,7 +34,7 @@ export const store = new Vuex.Store({
   },
   actions: {
     getDataByCity: (context, city) => {
-      context.commit("getDataApi", city);
+      context.commit('getDataApi', city);
     }
   }
 });
